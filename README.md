@@ -1,2 +1,2 @@
-# israFoxi
-a transmitter for IsraFox game
+# Foxi
+Fox hunting transmitter
