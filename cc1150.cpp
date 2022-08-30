@@ -1,5 +1,7 @@
+#include "user_config.h"
 #include "cc1150.h"
 #include "digitalWriteFast.h"
+
 
 void CC1150::send_command(unsigned int command) {
   select();
@@ -128,23 +130,17 @@ void CC1150::generateFakeInterrupts() {
 
   Flip(true); //queue the first bit, because the code below waits for the first RISING edge to queue the next
   SendLetter(" ");
-  SendLetter("3");
-  SendLetter("3");
-  SendLetter(".");
-  SendLetter("2");
-  SendLetter("3");
-  SendLetter("4");
-  SendLetter("5");
+  for (int i=0;i<7;i++)
+  {
+    SendLetter(String(Latitude[i]));
+  }
   SendLetter(" ");
   SendLetter(",");
   SendLetter(" ");
-  SendLetter("3");
-  SendLetter("5");
-  SendLetter(".");
-  SendLetter("8");
-  SendLetter("9");
-  SendLetter("1");
-  SendLetter("0");
+  for (int i=0;i<7;i++)
+  {
+    SendLetter(String(Longitude[i]));
+  }
   disableMisoInterrupt();
   select();  // disable the transmission of new data (caller should issue a command to the CC1150 after transmission of data)
   interrupts();

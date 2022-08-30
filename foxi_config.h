@@ -1,28 +1,18 @@
 #ifndef _FOXI_H
 #define _FOXI_H
-
-#include <Arduino.h>
 #include <SPI.h>
+#include "user_config.h"
 
 // Fc/396.728515625=FREQ2 FREQ1 FREQ0
-//433.000 = 1091426
-//433.150 = 1091804
-//433.300 = 1092182
+//433.000 = 1091426 | 10A762
+//433.100 = 1091678 | 10A85E
+//433.150 = 1091804 | 10A8DC
+//433.300 = 1092182 | 10AA56
 
-//433.000
+//433.300
 //#define FOXI_FREQ2 0x10
 //#define FOXI_FREQ1 0xA7
 //#define FOXI_FREQ0 0x62
-
-//433.150
-//#define FOXI_FREQ2 0x10
-//#define FOXI_FREQ1 0xA8
-//#define FOXI_FREQ0 0xDC
-
-//433.300
-#define FOXI_FREQ2 0x10
-#define FOXI_FREQ1 0xAA
-#define FOXI_FREQ0 0x56
 
 #define FOXI_CHANNR   0x00
 #define FOXI_DEVIATN  0x40 //26000000 / 131072 * (8) * 2 ^ 4 = 25,390625 KHz

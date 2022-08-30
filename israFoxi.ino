@@ -5,6 +5,7 @@
 #include <SPI.h>
 #include "foxi_config.h"
 
+
 void(* resetFunc) (void) = 0;//declare reset function at address 0
 int c = 0;
 
@@ -13,6 +14,8 @@ const unsigned int preSignaDelay = 1000;
 const unsigned int postSignaDelay = 29000;
 
 void setup() {
+  pinMode(8,OUTPUT);
+  digitalWrite(8, HIGH);
   Serial.begin(9600);
   foxi.setup();
 }

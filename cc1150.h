@@ -8,10 +8,16 @@
 #include <SPI.h>
 
 #define SPI_SS   10
-#define SPI_MOSI 11
+#define SPI_MOSI 11 
 #define SPI_MISO 12
 #define SPI_SCK  13
-#define GDO0	 2  //9(Pro Mini), 2(Nano)
+
+//9(Pro Mini), 2(Nano)
+#if defined(ARDUINO_AVR_NANO)
+#define GDO0 2
+#elif defined(ARDUINO_AVR_PRO)       
+#define GDO0 9
+#endif
 
 #define CC1150_IOCFG1       0x01
 #define CC1150_IOCFG0       0x02

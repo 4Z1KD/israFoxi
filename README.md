@@ -1,2 +1,2 @@
-# ישרא-FOX
-משדר זעיר עבור המשחק ישרא-FOX
+# Foxi
+Fox hunting transmitter
