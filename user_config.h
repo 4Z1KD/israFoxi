@@ -4,8 +4,8 @@
 
 /*************** Change only these rows **************/
 const double FREQUENCY = 433.500; //This is the frequency of the fox
-const char Latitude[] = "32.6983";
-const char Longitude[] = "35.6278";
+const char Latitude[] = "32.1234";
+const char Longitude[] = "35.5678";
 
 
 
