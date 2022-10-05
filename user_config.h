@@ -3,9 +3,9 @@
 #include <Arduino.h>
 
 /*************** Change only these rows **************/
-const double FREQUENCY = 433.400; //This is the frequency of the fox
-const char Latitude[] = "33.2381";
-const char Longitude[] = "35.6071";
+const double FREQUENCY = 433.500; //This is the frequency of the fox
+const char Latitude[] = "32.6983";
+const char Longitude[] = "35.6278";
 
 
 

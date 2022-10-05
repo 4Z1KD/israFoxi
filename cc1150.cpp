@@ -90,20 +90,21 @@ void CC1150::sendMessage() {
 }
 
 uint8_t currentGDO0;
+int mod = 8;
 void CC1150::Flip(bool isTone) {
   if (isTone)
   {
-    if (currentGDO0 == LOW && i % 8 < 7) {
+    if (currentGDO0 == LOW && i % mod < (mod-1)) {
 
     }
-    else if (currentGDO0 == LOW && i % 8 == 7) {
+    else if (currentGDO0 == LOW && i % mod == (mod-1)) {
       digitalWriteFast2(GDO0, HIGH);
       currentGDO0 = HIGH;
     }
-    else if (currentGDO0 == HIGH && i % 8 < 7) {
+    else if (currentGDO0 == HIGH && i % mod < (mod-1)) {
 
     }
-    else if (currentGDO0 == HIGH && i % 8 == 7) {
+    else if (currentGDO0 == HIGH && i % mod == (mod-1)) {
       digitalWriteFast2(GDO0, LOW);
       currentGDO0 = LOW;
     }
@@ -170,7 +171,7 @@ void CC1150::beep(bool isTone) {
       previousMiso = currentMiso;
     }
   }
-  while (i < 512);
+  while (i < 700);
   // wait for the last clock to become high so the last queued bit is also sent
   while (digitalReadFast2(SPI_MISO) == LOW);
   i = 0;
